@@ -5,7 +5,7 @@ import numpy as np
 
 #Tensorflow Model Prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model("alzheimer.h5")
+    model = tf.keras.models.load_model("streamlit/alzheimer.h5")
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(256,256))
     input_arr = tf.keras.preprocessing.image.img_to_array(image)
     input_arr = np.array([input_arr]) #convert single image to batch
@@ -68,7 +68,7 @@ if(app_mode=="Home"):
 """ 
 
     st.markdown(page_bg_img, unsafe_allow_html=True)
-    image_path = "home.jpg"
+    image_path = "streamlit/photos/home.jpg"
     
     #st.markdown(image_path,use_column_width=True)
 
@@ -131,15 +131,15 @@ elif(app_mode=="About"):
 
     with col1:
      st.header("Early-stage Alzheimer's (mild)")
-     st.image("photos/early.png")
+     st.image("streamlit/photos/early.png")
 
     with col2:
         st.header("Middle-stage Alzheimer's (moderate)")
-        st.image("photos/middle.png")
+        st.image("streamlit/photos/middle.png")
 
     with col3:
         st.header("Late-stage Alzheimer's (severe)")
-        st.image("photos/final.png")
+        st.image("streamlit/photos/final.png")
 
     st.title("Symptoms")
     st.markdown(
@@ -235,10 +235,10 @@ elif(app_mode=="Prevention"):
 
 # List of image paths and corresponding sentences
     images_and_sentences = [
-    {'path': 'photos/blood.jpg', 'sentence': 'Prevent and manage high blood pressure. '},
-    {'path': 'photos/sugar.webp', 'sentence': 'Manage blood sugar.'},
-    {'path': 'photos/weight.jpeg', 'sentence': 'Maintain a healthy weight.'},
-    {'path': 'photos/active.jpg', 'sentence': 'Be physically active.'}
+    {'path': 'streamlit/photos/blood.jpg', 'sentence': 'Prevent and manage high blood pressure. '},
+    {'path': 'streamlit/photos/sugar.webp', 'sentence': 'Manage blood sugar.'},
+    {'path': 'streamlit/photos/weight.jpeg', 'sentence': 'Maintain a healthy weight.'},
+    {'path': 'streamlit/photos/active.jpg', 'sentence': 'Be physically active.'}
     ]
 
 # Display images and sentences in rows with two images per row
